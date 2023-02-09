@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
   Table,
+  Switch,
   TableBody,
   TableCell,
   TableContainer,
@@ -28,6 +29,8 @@ const rows = [
   createData(4, "Cupcake", 305, 3.7, 67, 4.3),
   createData(5, "Gingerbread", 356, 16.0, 49, 3.9),
 ];
+
+const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 export default function BasicTable() {
   return (
@@ -68,7 +71,7 @@ export default function BasicTable() {
               <TableCell align="right">{row.template}</TableCell>
               <TableCell align="right">{row.product}</TableCell>
               <TableCell align="right">{row.visibility}</TableCell>
-              <TableCell align="right">{row.visibility}</TableCell>
+              <TableCell align="right"> <Switch {...label} defaultChecked /> </TableCell>
             </TableRow>
           ))}
         </TableBody>
