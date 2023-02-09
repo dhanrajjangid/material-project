@@ -23,11 +23,11 @@ const createData = (
 };
 
 const rows = [
-  createData(1, "Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData(2, "Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData(3, "Eclair", 262, 16.0, 24, 6.0),
-  createData(4, "Cupcake", 305, 3.7, 67, 4.3),
-  createData(5, "Gingerbread", 356, 16.0, 49, 3.9),
+  createData(1, "Best seller", "title", "Homepage", 6.0, "Everyone", 4.0),
+  createData(2, "Recommendation Based on Browsing", "title", "Homepage", 9.0, "Everyone", 4.3),
+  createData(3, "Your recent views", "title", "Homepage", 16.0, "Everyone", 6.0),
+  createData(4, "similar products based on browsing", "title", "Homepage", 3.7, "Everyone", 4.3),
+  createData(5, "New Arrivals", "title", "Homepage", 16.0, "Everyone", 3.9),
 ];
 
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
@@ -40,9 +40,7 @@ export default function BasicTable() {
           <TableRow sx={{ backgroundColor: "#F3F5F8" }}>
             <TableCell sx={{ fontWeight: "bold" }}>Priority</TableCell>
             <TableCell sx={{ fontWeight: "bold" }}>Widget</TableCell>
-            <TableCell sx={{ fontWeight: "bold" }} align="right">
-              Title
-            </TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>Title</TableCell>
             <TableCell sx={{ fontWeight: "bold" }} align="right">
               Template
             </TableCell>
@@ -67,7 +65,7 @@ export default function BasicTable() {
               <TableCell component="th" scope="row">
                 {row.widget}
               </TableCell>
-              <TableCell align="right">{row.title}</TableCell>
+              <TableCell>{row.widget}</TableCell>
               <TableCell align="right">{row.template}</TableCell>
               <TableCell align="right">{row.product}</TableCell>
               <TableCell align="right">{row.visibility}</TableCell>
