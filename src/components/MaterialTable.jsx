@@ -11,9 +11,10 @@ import {
 } from "@mui/material";
 
 function MaterialTable() {
-  const [alignment, setAlignment] = React.useState("web");
+  
+  const [alignment, setAlignment] = React.useState("inbuilt");
 
-  const handleChange = (event, newAlignment) => {
+  const handleChange = (newAlignment) => {
     setAlignment(newAlignment);
   };
 
@@ -26,13 +27,13 @@ function MaterialTable() {
       alignItems="center"
       p={2}
     >
+      {/* table header buttons */}
       <Grid
         spacing={2}
         container
         item
         md={4}
         sm={6}
-        // xs={4}
         direction="row"
         justifyContent="space-between"
       >
@@ -52,14 +53,16 @@ function MaterialTable() {
             exclusive
             value={alignment}
             onChange={handleChange}
-            aria-label="Platform"
             size="small"
           >
-            <ToggleButton value="web">InBuilt</ToggleButton>
-            <ToggleButton value="android">Your Own</ToggleButton>
+            <ToggleButton value="inbuilt">InBuilt</ToggleButton>
+            <ToggleButton value="yourOwn">Your Own</ToggleButton>
           </ToggleButtonGroup>
         </Grid>
       </Grid>
+
+{/* add widget button */}
+
       <Grid item>
         <Button variant="contained" sx={{ backgroundColor: "#01314B" }}>
           Add Widget
